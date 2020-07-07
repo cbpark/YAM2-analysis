@@ -57,6 +57,8 @@ int main(int argc, char* argv[]) {
             cout << lhef::show(c) << '\n';
             auto bquark = lhef::selectByID(lhef::Bottom, c);
             cout << "bquark: " << lhef::show(bquark) << '\n';
+            auto bquarkMomentum = getFourMomentum(bquark.front());
+            cout << "bquark: " << bquarkMomentum << '\n';
             auto lepton = lhef::selectByID(is_lepton, c);
             cout << "lepton: " << lhef::show(lepton) << '\n';
             auto neutrino = lhef::selectByID(is_neutrino, c);
