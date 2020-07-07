@@ -20,7 +20,7 @@ LDFLAGS  += -L$(COLEVENT)/lib -lcolevent -Wl,-rpath $(COLEVENT)/lib
 # YAM2 (https://github.com/cbpark/YAM2)
 YAM2     ?= ../YAM2
 CXXFLAGS += -I$(YAM2)/src
-# LDFLAGS  += -L$(YAM2)/lib -lYAM2
+LDFLAGS  += -L$(YAM2)/lib -lYAM2
 
 .PHONY: all clean
 
