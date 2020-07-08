@@ -1,6 +1,7 @@
 #ifndef YAM2_ANALYSIS_SRC_BLSYSTEM_H_
 #define YAM2_ANALYSIS_SRC_BLSYSTEM_H_
 
+#include "input.h"
 #include "momentum.h"
 
 #include <lhef/lhef.h>
@@ -21,5 +22,8 @@ struct BLsystem {
 };
 
 std::optional<BLsystem> selectP(const lhef::Event &ev);
+
+std::optional<yam2::InputKinematics> mkInputForBL(
+    const std::optional<BLsystem> &ps, double minv);
 
 #endif  // YAM2_ANALYSIS_SRC_BLSYSTEM_H_

@@ -8,6 +8,8 @@
 using std::cout;
 using std::vector;
 
+const double MNU = 0.0;
+
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         std::cerr << "Usage: yam2analysis.exe input\n"
@@ -26,11 +28,12 @@ int main(int argc, char *argv[]) {
 
     auto lhe = lhef::parseEvent(&filename);
     int num_eve = 0;
-    // for (; !lhe.empty(); lhe = lhef::parseEvent(&filename)) {
-    for (; num_eve < 3; lhe = lhef::parseEvent(&filename)) {
-        ++num_eve;
+    // for (; !lhe.empty(); lhe = lhef::parseEvent(&filename), ++num_eve) {
+    for (; num_eve < 3; lhe = lhef::parseEvent(&filename), ++num_eve) {
+        const auto input = mkInputForBL(selectP(lhe), MNU);
+        if (!input) { continue; }
 
-        selectP(lhe);
+        cout << input.value() << '\n';
     }
 
     cout << "-- " << num_eve << " events proceses.\n";
