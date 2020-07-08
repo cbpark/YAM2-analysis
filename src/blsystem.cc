@@ -1,6 +1,7 @@
 #include "blsystem.h"
 
 #include "input.h"
+#include "momentum.h"
 
 #include <lhef/lhef.h>
 
@@ -59,5 +60,5 @@ std::optional<yam2::InputKinematics> mkInputForBL(
     const std::optional<BLsystem> &ps, double minv) {
     if (!ps) { return {}; }
     const auto pv = ps.value();
-    return yam2::mkInput(pv.bquarks_, pv.leptons_, pv.ptmiss_, minv);
+    return yam2::mkInput(pv.bquarks_, pv.leptons_, pv.ptmiss_, yam2::Mass{minv});
 }
