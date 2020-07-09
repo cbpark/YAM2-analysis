@@ -18,6 +18,11 @@ COLEVENT ?= /usr/local
 CXXFLAGS += -I$(COLEVENT)/include/colevent
 LIBS     += -L$(COLEVENT)/lib -lcolevent -Wl,-rpath $(COLEVENT)/lib
 
+# NLopt (https://nlopt.readthedocs.io/
+NLOPT    ?= /usr
+CXXFLAGS += -I$(NLOPT)/include
+LIBS     += -L$(NLOPT)/lib -lnlopt
+
 # YAM2 (https://github.com/cbpark/YAM2)
 YAM2     ?= ../YAM2
 CXXFLAGS += -I$(YAM2)/src

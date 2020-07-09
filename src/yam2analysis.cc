@@ -1,5 +1,7 @@
 #include "blsystem.h"
 
+#include "yam2.h"
+
 #include <lhef/lhef.h>
 
 #include <fstream>
@@ -33,7 +35,12 @@ int main(int argc, char *argv[]) {
         const auto input = mkInputForBL(selectP(lhe), MNU);
         if (!input) { continue; }
 
-        cout << input.value() << '\n';
+        // cout << input.value() << '\n';
+
+        auto m2sol = yam2::m2CCSQP(input.value());
+        if (!m2sol) { continue; }
+
+        cout << m2sol.value() << '\n';
     }
 
     cout << "-- " << num_eve << " events proceses.\n";
