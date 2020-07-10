@@ -1,13 +1,13 @@
 SRCDIR 	 := src
 BINDIR   := bin
-CXXFLAGS := -g -O0 -Wall -Wextra -std=c++17 -pedantic -I$(SRCDIR) $(CXXFLAGS)
-LDFLAGS  := -O0
+CXXFLAGS := -g -O2 -Wall -Wextra -std=c++17 -pedantic -I$(SRCDIR) $(CXXFLAGS)
+LDFLAGS  := -O2
 LIBS     :=
 MKDIR    := mkdir -p
 RM       := rm -f
 
 # Targets
-EXE    := $(BINDIR)/yam2analysis.exe
+EXE    := $(BINDIR)/m2cc_sqp.exe
 EXESRC := $(patsubst $(BINDIR)/%,$(SRCDIR)/%.cc,$(EXE))
 EXEOBJ := $(EXESRC:.cc=.o)
 LIBSRC := $(filter-out $(EXESRC),$(wildcard $(SRCDIR)/*.cc))

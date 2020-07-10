@@ -1,13 +1,10 @@
 #ifndef YAM2_ANALYSIS_SRC_BLSYSTEM_H_
 #define YAM2_ANALYSIS_SRC_BLSYSTEM_H_
 
-#include "input.h"
-#include "momentum.h"
-
 #include <lhef/lhef.h>
-
 #include <optional>
 #include <vector>
+#include "yam2.h"
 
 struct BLsystem {
     std::vector<yam2::FourMomentum> bquarks_;
