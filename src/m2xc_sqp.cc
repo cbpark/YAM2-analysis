@@ -20,7 +20,7 @@ void writeNullOutput(std::ofstream &outfile) {
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        std::cerr << "Usage: m2cc_sqp.exe input output\n"
+        std::cerr << "Usage: m2xc_sqp.exe input output\n"
                   << "  - input: Input file in "
                   << "Les Houches Event File format\n"
                   << "  - output: output file.\n";
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 
         // cout << input.value() << '\n';
 
-        auto m2sol = yam2::m2CCSQP(input.value(), TOL);
+        auto m2sol = yam2::m2XCSQP(input.value(), TOL);
         if (!m2sol) {
             writeNullOutput(outfile);
             continue;

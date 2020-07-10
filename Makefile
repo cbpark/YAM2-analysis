@@ -7,8 +7,19 @@ MKDIR    := mkdir -p
 RM       := rm -f
 
 # Targets
-EXE    := $(BINDIR)/m2cc_sqp.exe
-EXESRC := $(patsubst $(BINDIR)/%,$(SRCDIR)/%.cc,$(EXE))
+EXE    := $(BINDIR)/m2xx_sqp.exe \
+	  $(BINDIR)/m2cx_sqp.exe \
+	  $(BINDIR)/m2xc_sqp.exe \
+	  $(BINDIR)/m2cc_sqp.exe \
+	  $(BINDIR)/m2xx_auglag_bfgs.exe \
+	  $(BINDIR)/m2cx_auglag_bfgs.exe \
+	  $(BINDIR)/m2xc_auglag_bfgs.exe \
+	  $(BINDIR)/m2cc_auglag_bfgs.exe \
+	  $(BINDIR)/m2xx_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2cx_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2xc_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2cc_auglag_nmsimplex.exe
+EXESRC := $(patsubst $(BINDIR)/%.exe,$(SRCDIR)/%.cc,$(EXE))
 EXEOBJ := $(EXESRC:.cc=.o)
 LIBSRC := $(filter-out $(EXESRC),$(wildcard $(SRCDIR)/*.cc))
 LIBOBJ := $(LIBSRC:.cc=.o)
