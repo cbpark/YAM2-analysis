@@ -40,8 +40,8 @@ int main(int argc, char *argv[]) {
 
     auto lhe = lhef::parseEvent(&infile);
     int num_eve = 0;
-    // for (; !lhe.empty(); lhe = lhef::parseEvent(&infile), ++num_eve) {
-    for (; num_eve < 3; lhe = lhef::parseEvent(&infile), ++num_eve) {
+    // for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
+    for (; num_eve < 10; lhe = lhef::parseEvent(&infile), ++num_eve) {
         const auto input = mkInputForBL(selectP(lhe), MNU);
         if (!input) {
             writeNullOutput(outfile);
@@ -51,13 +51,15 @@ int main(int argc, char *argv[]) {
         // cout << input.value() << '\n';
 
         auto m2sol = yam2::m2CCSQP(input.value(), TOL);
+        // auto m2sol = yam2::m2CCAugLagBFGS(input.value(), TOL);
+        // auto m2sol = yam2::m2CCAugLagNMSimplex(input.value(), TOL);
         if (!m2sol) {
             writeNullOutput(outfile);
             continue;
         }
         // cout << m2sol.value() << '\n';
         outfile << std::setw(12) << std::setprecision(7) << m2sol.value().m2()
-                << '\t' << m2sol.value().neval_objf << '\n';
+                << '\t' << m2sol.value().neval_objf() << '\n';
     }
 
     cout << "-- " << num_eve << " events processed.\n";
