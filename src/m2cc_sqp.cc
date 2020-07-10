@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
         }
         // cout << m2sol.value() << '\n';
         outfile << std::setw(12) << std::setprecision(7) << m2sol.value().m2()
-                << '\t' << m2sol.value().neval_obj << '\n';
+                << '\t' << m2sol.value().neval_objf << '\n';
     }
 
     cout << "-- " << num_eve << " events processed.\n";
