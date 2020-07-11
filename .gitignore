@@ -4,6 +4,5 @@
 *.exe
 *PATH
 *TAGS
-bin
 data
 *.dat

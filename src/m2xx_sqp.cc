@@ -11,14 +11,14 @@
 using std::cout;
 
 const double MNU = 0.0;
-const double TOL = 1.0e-2;
+const double TOL = 1.0e-3;
 
-void writeNullOutput(std::ofstream &outfile) {
+void writeNullOutput(std::ofstream& outfile) {
     outfile << std::setw(12) << std::setprecision(7) << -1.0 << '\t' << -1
             << '\n';
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     if (argc != 3) {
         std::cerr << "Usage: m2xx_sqp.exe input output\n"
                   << "  - input: Input file in "
@@ -40,8 +40,8 @@ int main(int argc, char *argv[]) {
 
     auto ev = lhef::parseEvent(&infile);
     int num_eve = 0;
-    for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
-        // for (; num_eve < 10; ev = lhef::parseEvent(&infile), ++num_eve) {
+    // for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
+    for (; num_eve < 80; ev = lhef::parseEvent(&infile), ++num_eve) {
         const auto input = mkInputForBL(selectP(ev), MNU);
         if (!input) {
             writeNullOutput(outfile);
