@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     }
 
     std::ofstream outfile(argv[2]);
-    outfile << "# M2, number of evals\n";
+    outfile << "# MT2, number of evals\n";
 
     auto ev = lhef::parseEvent(&infile);
     int num_eve = 0;
