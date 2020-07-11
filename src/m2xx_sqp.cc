@@ -40,8 +40,8 @@ int main(int argc, char* argv[]) {
 
     auto ev = lhef::parseEvent(&infile);
     int num_eve = 0;
-    // for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
-    for (; num_eve < 80; ev = lhef::parseEvent(&infile), ++num_eve) {
+    for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
+    // for (; num_eve < 80; ev = lhef::parseEvent(&infile), ++num_eve) {
         const auto input = mkInputForBL(selectP(ev), MNU);
         if (!input) {
             writeNullOutput(outfile);
