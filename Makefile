@@ -3,7 +3,6 @@ BINDIR   := bin
 CXXFLAGS := -g -O2 -Wall -Wextra -std=c++17 -pedantic -I$(SRCDIR) $(CXXFLAGS)
 LDFLAGS  := -O2
 LIBS     :=
-MKDIR    := mkdir -p
 RM       := rm -f
 
 # Targets
@@ -18,7 +17,8 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2xc_auglag_nmsimplex.exe \
-	  $(BINDIR)/m2cc_auglag_nmsimplex.exe
+	  $(BINDIR)/m2cc_auglag_nmsimplex.exe \
+	  $(BINDIR)/mt2.exe
 EXESRC := $(patsubst $(BINDIR)/%.exe,$(SRCDIR)/%.cc,$(EXE))
 EXEOBJ := $(EXESRC:.cc=.o)
 LIBSRC := $(filter-out $(EXESRC),$(wildcard $(SRCDIR)/*.cc))
@@ -44,9 +44,7 @@ LIBS     += -L$(YAM2)/lib -lYAM2
 all: $(EXE)
 
 $(BINDIR)/%.exe: $(SRCDIR)/%.o $(LIBOBJ)
-	$(MKDIR) $(BINDIR)
 	$(CXX) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 clean::
 	$(RM) $(EXE) $(LIBOBJ)
-	$(RM) -r $(BINDIR)
