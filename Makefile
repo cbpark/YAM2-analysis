@@ -1,7 +1,6 @@
 SRCDIR 	 := src
 BINDIR   := bin
 CXXFLAGS := -g -O2 -Wall -Wextra -std=c++17 -pedantic -I$(SRCDIR) $(CXXFLAGS)
-LDFLAGS  := -O2
 LIBS     :=
 RM       := rm -f
 
