@@ -31,8 +31,7 @@ inline std::optional<std::array<double, 2>> wMassReco(
 
     const auto w1 = leptons.front() + sol.k1();
     const auto w2 = leptons.back() + sol.k2();
-    const std::array<double, 2> mw{w1.m(), w2.m()};
-    return mw;
+    return std::array<double, 2>{w1.m(), w2.m()};
 }
 
 #endif  // YAM2_ANALYSIS_SRC_BLSYSTEM_H_
