@@ -14,7 +14,6 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2cx_mw_sqp.exe \
 	  $(BINDIR)/m2xc_mw_sqp.exe \
 	  $(BINDIR)/m2cc_mw_sqp.exe \
-	  $(BINDIR)/m2cr_mw_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_bfgs.exe \
 	  $(BINDIR)/m2cx_auglag_bfgs.exe \
 	  $(BINDIR)/m2xc_auglag_bfgs.exe \
