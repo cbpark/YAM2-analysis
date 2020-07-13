@@ -9,6 +9,7 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2cx_sqp.exe \
 	  $(BINDIR)/m2xc_sqp.exe \
 	  $(BINDIR)/m2cc_sqp.exe \
+	  $(BINDIR)/m2xc_mw_sqp.exe \
 	  $(BINDIR)/m2cc_mw_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_bfgs.exe \
 	  $(BINDIR)/m2cx_auglag_bfgs.exe \
