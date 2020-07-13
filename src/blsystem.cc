@@ -52,11 +52,3 @@ std::optional<BLsystem> selectP(const lhef::Event &ev) {
 
     return {{bquarks, leptons, ptmiss}};
 }
-
-std::optional<yam2::InputKinematics> mkInputForBL(
-    const std::optional<BLsystem> &ps, double minv) {
-    if (!ps) { return {}; }
-    const auto pv = ps.value();
-    return yam2::mkInput(pv.bquarks_, pv.leptons_, pv.ptmiss_,
-                         yam2::Mass{minv});
-}

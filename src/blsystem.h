@@ -21,8 +21,13 @@ struct BLsystem {
 
 std::optional<BLsystem> selectP(const lhef::Event &ev);
 
-std::optional<yam2::InputKinematics> mkInputForBL(
-    const std::optional<BLsystem> &ps, double minv);
+inline std::optional<yam2::InputKinematics> mkInputForBL(
+    const std::optional<BLsystem> &ps, double minv, double mrel = 0.0) {
+    if (!ps) { return {}; }
+    const auto pv = ps.value();
+    return yam2::mkInput(pv.bquarks_, pv.leptons_, pv.ptmiss_, yam2::Mass{minv},
+                         yam2::Mass{mrel});
+}
 
 inline std::optional<std::array<double, 2>> wMassReco(
     const BLsystem &blsystem, const yam2::M2Solution &sol) {

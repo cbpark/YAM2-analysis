@@ -11,6 +11,7 @@
 using std::cout;
 
 const double MNU = 0.0;
+const double MW = 80.379;
 const double TOL = 1.0e-3;
 
 void writeNullOutput(std::ofstream &outfile) {
@@ -20,7 +21,7 @@ void writeNullOutput(std::ofstream &outfile) {
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        std::cerr << "Usage: m2xx_sqp.exe input output\n"
+        std::cerr << "Usage: m2cr_sqp.exe input output\n"
                   << "  - input: Input file in "
                   << "Les Houches Event File format\n"
                   << "  - output: output file.\n";
@@ -41,8 +42,8 @@ int main(int argc, char *argv[]) {
     auto ev = lhef::parseEvent(&infile);
     int num_eve = 0;
     for (; !ev.empty(); ev = lhef::parseEvent(&infile), ++num_eve) {
-        // for (; num_eve < 80; ev = lhef::parseEvent(&infile), ++num_eve) {
-        const auto input = mkInputForBL(selectP(ev), MNU);
+    // for (; num_eve < 10; ev = lhef::parseEvent(&infile), ++num_eve) {
+        const auto input = mkInputForBL(selectP(ev), MNU, MW);
         if (!input) {
             writeNullOutput(outfile);
             continue;
@@ -50,7 +51,7 @@ int main(int argc, char *argv[]) {
 
         // cout << input.value() << '\n';
 
-        auto m2sol = yam2::m2XXSQP(input.value(), TOL);
+        auto m2sol = yam2::m2CRSQP(input.value(), TOL);
         if (!m2sol) {
             writeNullOutput(outfile);
             continue;

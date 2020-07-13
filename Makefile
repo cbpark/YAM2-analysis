@@ -9,19 +9,23 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2cx_sqp.exe \
 	  $(BINDIR)/m2xc_sqp.exe \
 	  $(BINDIR)/m2cc_sqp.exe \
+	  $(BINDIR)/m2cr_sqp.exe \
 	  $(BINDIR)/m2xx_mw_sqp.exe \
 	  $(BINDIR)/m2cx_mw_sqp.exe \
 	  $(BINDIR)/m2xc_mw_sqp.exe \
 	  $(BINDIR)/m2cc_mw_sqp.exe \
+	  $(BINDIR)/m2cr_mw_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_bfgs.exe \
 	  $(BINDIR)/m2cx_auglag_bfgs.exe \
 	  $(BINDIR)/m2xc_auglag_bfgs.exe \
 	  $(BINDIR)/m2cc_auglag_bfgs.exe \
+	  $(BINDIR)/m2cr_auglag_bfgs.exe \
 	  $(BINDIR)/m2cc_mw_auglag_bfgs.exe \
 	  $(BINDIR)/m2xx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2xc_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cc_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2cr_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cc_mw_auglag_nmsimplex.exe \
 	  $(BINDIR)/mt2.exe
 EXESRC := $(patsubst $(BINDIR)/%.exe,$(SRCDIR)/%.cc,$(EXE))
