@@ -8,6 +8,11 @@
 #include <iomanip>
 #include <iostream>
 
+#ifdef DEBUG
+#include <chrono>
+using namespace std::chrono;
+#endif
+
 using std::cout;
 
 const double MNU = 0.0;
@@ -19,7 +24,12 @@ void writeNullOutput(std::ofstream &outfile) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+#ifdef DEBUG
+    if (argc != 4)
+#else
+    if (argc != 3)
+#endif
+    {
         std::cerr << "Usage: m2cx_auglag_nmsimplex.exe input output\n"
                   << "  - input: Input file in "
                   << "Les Houches Event File format\n"
@@ -37,6 +47,12 @@ int main(int argc, char *argv[]) {
 
     std::ofstream outfile(argv[2]);
     outfile << "# M2, number of evals\n";
+
+#ifdef DEBUG
+    std::ofstream ftime;
+    ftime.open((argv[3]), std::ofstream::out | std::ofstream::app);
+    auto start = high_resolution_clock::now();
+#endif
 
     auto ev = lhef::parseEvent(&infile);
     int num_eve = 0;
@@ -59,6 +75,11 @@ int main(int argc, char *argv[]) {
         outfile << std::setw(12) << std::setprecision(7) << m2sol.value().m2()
                 << '\t' << m2sol.value().neval_objf() << '\n';
     }
+#ifdef DEBUG
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    ftime << duration.count() * 1.0e-6 << '\n';
+#endif
 
     cout << "-- " << num_eve << " events processed.\n";
     infile.close();
