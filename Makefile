@@ -26,6 +26,12 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2cc_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cr_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cc_mw_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2xx_min.exe \
+	  $(BINDIR)/m2cx_min.exe \
+	  $(BINDIR)/m2xc_min.exe \
+	  $(BINDIR)/m2cc_min.exe \
+	  $(BINDIR)/m2cr_min.exe \
+	  $(BINDIR)/m2cc_mw_min.exe \
 	  $(BINDIR)/mt2.exe
 EXESRC := $(patsubst $(BINDIR)/%.exe,$(SRCDIR)/%.cc,$(EXE))
 EXEOBJ := $(EXESRC:.cc=.o)
