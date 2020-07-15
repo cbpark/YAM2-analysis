@@ -10,9 +10,6 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2xc_sqp.exe \
 	  $(BINDIR)/m2cc_sqp.exe \
 	  $(BINDIR)/m2cr_sqp.exe \
-	  $(BINDIR)/m2xx_mw_sqp.exe \
-	  $(BINDIR)/m2cx_mw_sqp.exe \
-	  $(BINDIR)/m2xc_mw_sqp.exe \
 	  $(BINDIR)/m2cc_mw_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_bfgs.exe \
 	  $(BINDIR)/m2cx_auglag_bfgs.exe \
@@ -31,6 +28,9 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2xc_min.exe \
 	  $(BINDIR)/m2cc_min.exe \
 	  $(BINDIR)/m2cr_min.exe \
+	  $(BINDIR)/m2xx_mw_min.exe \
+	  $(BINDIR)/m2cx_mw_min.exe \
+	  $(BINDIR)/m2xc_mw_min.exe \
 	  $(BINDIR)/m2cc_mw_min.exe \
 	  $(BINDIR)/mt2.exe
 EXESRC := $(patsubst $(BINDIR)/%.exe,$(SRCDIR)/%.cc,$(EXE))
