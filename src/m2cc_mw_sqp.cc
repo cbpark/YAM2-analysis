@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
         // cout << input.value() << '\n';
 
         const auto m2sol = yam2::m2CCSQP(input.value(), TOL);
-        if (!m2sol) {
+        if (!m2sol || m2sol.value().m2() <= 0.0) {
             writeNullOutput(outfile);
             continue;
         }
