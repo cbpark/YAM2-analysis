@@ -16,7 +16,7 @@ using namespace std::chrono;
 using std::cout;
 
 const double MNU = 0.0;
-const double TOL = 1.0e-3;
+const double TOL = 1.0e-6;
 
 void writeNullOutput(std::ofstream &outfile) {
     outfile << std::setw(12) << std::setprecision(7) << -1.0 << '\t' << -1
