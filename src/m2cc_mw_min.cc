@@ -65,8 +65,8 @@ int main(int argc, char *argv[]) {
         }
 
         outfile << std::setw(12) << std::setprecision(7) << m2sol_val.m2()
-                << std::setw(15) << std::setprecision(7) << mw.value()[0]
-                << std::setw(15) << std::setprecision(7) << mw.value()[1]
+                << std::setw(20) << std::setprecision(7) << mw.value()[0]
+                << std::setw(20) << std::setprecision(7) << mw.value()[1]
                 << std::setw(10) << m2sol_val.neval_objf() << '\n';
     }
 
