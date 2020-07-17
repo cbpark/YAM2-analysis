@@ -11,18 +11,30 @@ EXE    := $(BINDIR)/m2xx_sqp.exe \
 	  $(BINDIR)/m2cc_sqp.exe \
 	  $(BINDIR)/m2cr_sqp.exe \
 	  $(BINDIR)/m2cc_mw_sqp.exe \
+	  $(BINDIR)/m2xx_time_sqp.exe \
+	  $(BINDIR)/m2cx_time_sqp.exe \
+	  $(BINDIR)/m2xc_time_sqp.exe \
+	  $(BINDIR)/m2cc_time_sqp.exe \
 	  $(BINDIR)/m2xx_auglag_bfgs.exe \
 	  $(BINDIR)/m2cx_auglag_bfgs.exe \
 	  $(BINDIR)/m2xc_auglag_bfgs.exe \
 	  $(BINDIR)/m2cc_auglag_bfgs.exe \
 	  $(BINDIR)/m2cr_auglag_bfgs.exe \
 	  $(BINDIR)/m2cc_mw_auglag_bfgs.exe \
+	  $(BINDIR)/m2xx_time_auglag_bfgs.exe \
+	  $(BINDIR)/m2cx_time_auglag_bfgs.exe \
+	  $(BINDIR)/m2xc_time_auglag_bfgs.exe \
+	  $(BINDIR)/m2cc_time_auglag_bfgs.exe \
 	  $(BINDIR)/m2xx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cx_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2xc_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cc_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cr_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2cc_mw_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2xx_time_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2cx_time_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2xc_time_auglag_nmsimplex.exe \
+	  $(BINDIR)/m2cc_time_auglag_nmsimplex.exe \
 	  $(BINDIR)/m2xx_min.exe \
 	  $(BINDIR)/m2cx_min.exe \
 	  $(BINDIR)/m2xc_min.exe \
