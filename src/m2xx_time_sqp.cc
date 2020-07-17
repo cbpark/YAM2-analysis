@@ -17,7 +17,7 @@ const double TOL = 1.0e-3;
 
 void writeNullOutput(std::ofstream &outfile) {
     outfile << std::setw(12) << std::setprecision(7) << -1.0 << '\t' << -1
-            << '\n';
+            << '\t' << std::setw(20) << -1 << '\n';
 }
 
 int main(int argc, char *argv[]) {

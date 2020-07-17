@@ -17,7 +17,7 @@ const double TOL = 1.0e-3;
 
 void writeNullOutput(std::ofstream &outfile) {
     outfile << std::setw(12) << std::setprecision(7) << -1.0 << '\t' << -1
-            << '\n';
+            << '\t' << std::setw(20) << -1 << '\n';
 }
 
 int main(int argc, char *argv[]) {
@@ -55,13 +55,14 @@ int main(int argc, char *argv[]) {
 
         auto m2sol = yam2::m2CCSQP(input.value(), TOL);
 
-        const auto stop = high_resolution_clock::now();
-        const auto duration = duration_cast<microseconds>(stop - start);
-
         if (!m2sol || m2sol.value().m2() <= 0.0) {
             writeNullOutput(outfile);
             continue;
         }
+
+        const auto stop = high_resolution_clock::now();
+        const auto duration = duration_cast<microseconds>(stop - start);
+
         // cout << m2sol.value() << '\n';
         outfile << std::setw(12) << std::setprecision(7) << m2sol.value().m2()
                 << '\t' << m2sol.value().neval_objf() << '\t' << std::setw(20)
