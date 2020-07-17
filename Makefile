@@ -55,6 +55,8 @@ LIBS     += -L$(YAM2)/lib -lYAM2
 
 .PHONY: all clean
 
+.PRECIOUS: %.o
+
 all: $(EXE)
 
 $(BINDIR)/%.exe: $(SRCDIR)/%.o $(LIBOBJ)
